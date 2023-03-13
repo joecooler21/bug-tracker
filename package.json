@@ -1,6 +1,5 @@
 {
   "homepage": "https://joecooler21.github.io/bug-tracker",
-
   "name": "bug-tracker",
   "private": true,
   "version": "0.0.0",
@@ -10,9 +9,11 @@
     "build": "vite build --base=./",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy":"gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

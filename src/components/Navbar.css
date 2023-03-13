@@ -1,0 +1,85 @@
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgrey;
+    width: 100%;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.search-container {
+    display: flex;
+    width: 40%;
+
+}
+
+@media(max-width:700px) {
+    .search-container {
+        width: 95%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}
+
+.search-text {
+    width: 100%;
+    height: 95%;
+    outline: transparent;
+    border: none;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    caret-color: black;
+}
+
+@media screen and (max-width:700px) {
+    .search-text {
+        border:1px solid lightgrey;
+        border-radius: 10px;
+    }
+}
+
+.issue-buttons-container {
+    display: flex;
+}
+
+.navbar-button {
+    outline: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.navbar-button:hover {
+    background-color: rgba(211, 211, 211, 20%);
+}
+
+.badge {
+    position:relative;
+    text-align: center;
+    display:inline-block;
+    top:-7px;
+    width:10px;
+    height:10px;
+    line-height: 10px;
+    border-radius: 50%;
+    padding:5px;
+    color:white;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.navbar-icon {
+    vertical-align: middle;
+}

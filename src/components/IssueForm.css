@@ -1,0 +1,50 @@
+.new-issue-container {
+    width:400px;
+    height:400px;
+    display:flex;
+    flex-direction: column;
+}
+
+.new-issue-title {
+    outline:transparent;
+    border:1px solid lightgrey;
+    border-radius: 5px;
+    margin-bottom:5px;
+    height:40px;
+}
+
+.new-issue-comment {
+    height:100%;
+    resize:none;
+    border:1px solid lightgrey;
+    outline:transparent;
+    border-radius: 5px;
+}
+.submit-button-container {
+    display:flex;
+    justify-content: center;
+    position:relative;
+    top:10px;
+}
+
+.submit {
+    border:1px solid lightgrey;
+    border-radius: 5px;
+    margin-left:5px;
+    width:100px;
+}
+
+.select {
+    width:185px;
+    outline:transparent;
+    border:1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.select:hover {
+    cursor: pointer;
+}
+  
+  
+  
+  

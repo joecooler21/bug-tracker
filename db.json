@@ -1,0 +1,79 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Web Stock Tracker",
+            "info": "Stock tracker application written with React and MongoDB",
+            "open": [
+                {
+                    "id": 1,
+                    "title": "App crashes on exit",
+                    "comment": "See title",
+                    "author": "Joe"
+                }
+            ],
+            "closed": [
+                {
+                    "id": 1,
+                    "title": "Weather information doesn't match zip code",
+                    "comment/resolution": "issue fixed",
+                    "author": "Joe"
+                },
+                {
+                    "id": 2,
+                    "title": "Slow performance after fetching weather data",
+                    "comment/resolution": "issue fixed",
+                    "author": "Joe"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "iOS Video Streamer",
+            "info": "iOS Video streamer application written in Swift",
+            "open": [
+                {
+                    "id": 1,
+                    "title": "App freezes on playback",
+                    "comment": "See title",
+                    "author": "Joe"
+                },
+                {
+                    "id": 2,
+                    "title": "Playback timer doesn't match playback position",
+                    "comment": "See title",
+                    "author": "Joe"
+                }
+            ],
+            "closed": [
+                {
+                    "id": 1,
+                    "title": "seeking sometimes reverts to starting playback position",
+                    "comment/resolution": "issue fixed",
+                    "author": "Joe"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Android Weather Widget",
+            "info": "Weather widget for Android devices written in Java",
+            "open": [
+                {
+                    "id": 1,
+                    "title": "API Fetch request throws error on application start",
+                    "comment": "See title",
+                    "author": "Joe"
+                }
+            ],
+            "closed": [
+                {
+                    "id": 1,
+                    "title": "Refresh button alignment issue",
+                    "comment/resolution": "issue fixed",
+                    "author": "Joe"
+                }
+            ]
+        }
+    ]
+}

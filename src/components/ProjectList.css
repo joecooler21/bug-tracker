@@ -1,0 +1,81 @@
+.project-list-container {
+    display:flex;
+    flex-direction: column;
+    width:auto;
+    margin:5px;
+    height:630px;
+}
+
+.project-card-container {
+    border:1px solid lightgrey;
+    position:relative;
+    top:5%;
+    border-radius:10px;
+    padding:5px;
+    cursor: pointer;
+    transition: all .5s;
+    margin:5px;
+}
+
+.project-card-container:hover {
+    background-color: rgba(211, 211, 211, 20%);
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.info {
+    font-size:12px;
+    position:relative;
+    top:5%;
+}
+
+.delete-button {
+    outline:transparent;
+    border:1px solid lightgrey;
+    border-radius: 5px;
+    position:absolute;
+    right:5px;
+    bottom:5px;
+    background-color: white;
+}
+
+.delete-button:hover {
+    background-color: rgba(211, 211, 211, 20%);
+    cursor: pointer;
+}
+
+.status-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size:13px;
+    position:absolute;
+    right:80px;
+    bottom:5px;
+}
+
+.open-label {
+    color:red;
+}
+
+.close-label { 
+    color:blue;
+}
+
+@media screen and (max-width:700px) {
+    .project-list-container {
+        height:565px;
+    }
+    .project-card-container {
+        margin:5px;
+    }
+    .status-container {
+        flex-direction: row;
+        height:fit-content;
+        width:150px;
+        top:5px;
+        right:50px;
+    }
+}
