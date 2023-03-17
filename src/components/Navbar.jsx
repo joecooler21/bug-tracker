@@ -20,14 +20,14 @@ const Navbar = ({ setProjectData, setActiveProject }) => {
     return (
         <div className='nav-container'>
             <div className='search-container'>
-                <button className='navbar-button' ><Search className='navbar-icon' /></button>
+                <button className='navbar-button left-radius navbar-search' ><Search className='navbar-icon' /></button>
                 <input className='search-text' type='text' defaultValue='in:open by:joe'></input>
             </div>
 
             <div>
                 <button className='navbar-button'>
                     <CreateNewFolder className='navbar-icon'/> New Project</button>
-                <button onClick={loadProjects} className='navbar-button'>
+                <button onClick={loadProjects} className='navbar-button right-radius white-left-border'>
                     <FolderOpen className='navbar-icon' /> Load Project</button>
             </div>
 

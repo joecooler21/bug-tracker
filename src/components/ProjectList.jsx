@@ -8,7 +8,7 @@ const ProjectList = ({ projectData, setActiveProject }) => {
             {projectData.map((e) => {
                 
                 return(<div onClick={() => {setActiveProject(e.id)}} key={e.id} className='project-card-container shadow'>
-                    <div>{e.title}</div>
+                    <div className='project-card-header'>{e.title}</div>
                     <div className='info'>{e.info}</div>
                     <button onClick={(e)=>{e.stopPropagation()}} className='delete-button'><Delete className='navbar-icon' /></button>
                     <div className='status-container'>

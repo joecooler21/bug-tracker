@@ -7,7 +7,8 @@
 }
 
 .project-card-container {
-    border:1px solid lightgrey;
+    
+    border: 1px solid var(--primary);
     position:relative;
     top:5%;
     border-radius:10px;
@@ -15,10 +16,20 @@
     cursor: pointer;
     transition: all .5s;
     margin:5px;
+    background-color: var(--background);
+}
+
+.project-card-header {
+    font-weight:600;
+    font-size:14px;
+}
+
+.button-test:hover {
+    cursor: pointer;
 }
 
 .project-card-container:hover {
-    background-color: rgba(211, 211, 211, 20%);
+    background-color: var(--background)
 }
 
 .shadow {
@@ -33,17 +44,19 @@
 
 .delete-button {
     outline:transparent;
-    border:1px solid lightgrey;
+    border:1px solid var(--primary);
     border-radius: 5px;
     position:absolute;
     right:5px;
     bottom:5px;
-    background-color: white;
+    background-color: var(--background);
+    color:var(--secondary);
+    transition:all .5s;
 }
 
 .delete-button:hover {
-    background-color: rgba(211, 211, 211, 20%);
     cursor: pointer;
+    scale:1.1;
 }
 
 .status-container {
@@ -57,11 +70,11 @@
 }
 
 .open-label {
-    color:red;
+    color:var(--danger)
 }
 
 .close-label { 
-    color:blue;
+    color:var(--info)
 }
 
 @media screen and (max-width:700px) {

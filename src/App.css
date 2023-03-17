@@ -1,25 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+
+:root {
+    --background: #001623;
+    --foreground:#26293C;
+    --blue: #5e72e4;
+    --indigo: #5603ad;
+    --purple: #8965e0;
+    --pink: #f3a4b5;
+    --red: #f5365c;
+    --orange: #fb6340;
+    --yellow: #ffd600;
+    --green: #2dce89;
+    --teal: #11cdef;
+    --cyan: #2bffc6;
+    --gray: #6c757d;
+    --gray-dark: #32325d;
+    --light: #ced4da;
+    --lighter: #e9ecef;
+    --primary: #e14eca;
+    --secondary: #f4f5f7;
+    --success: #00f2c3;
+    --info: #1d8cf8;
+    --warning: #ff8d72;
+    --danger: #fd5d93;
+    --light: #adb5bd;
+    --dark: #212529;
+    --default: #344675;
+    --white: #fff;
+    --neutral: #fff;
+    --darker: #000;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
 
 * {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Poppins', sans-serif;
     caret-color: transparent;
 }
 
 body {
-    background-color: rgba(0, 128, 128, 10%);
+    background-color: var(--background)
 }
 
 .main-container {
-    border: 1px solid lightgrey;
+    border: 1px solid var(--primary);
     border-radius: 10px;
-    width:90%;
-    height:690px;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    background-color: white;
+    width: 90%;
+    height: 690px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:var(--foreground);
+    color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
-

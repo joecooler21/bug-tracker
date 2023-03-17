@@ -1,7 +1,7 @@
 
 
 .active-project-container {
-    border: 1px solid lightgrey;
+    border: 1px solid var(--primary);
     position:relative;
     top: 5%;
     width:auto;
@@ -53,7 +53,7 @@
 .tab {
     text-align: center;
     width: 100px;
-    border: 1px solid lightgrey;
+    border: 1px solid var(--primary);
     border-bottom: none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -63,54 +63,169 @@
 }
 
 .open-tab-active {
-    background-color: rgba(255, 0, 0, 0.100);
+    background-color: var(--danger)
 }
 
 .closed-tab-active {
-    background-color: rgba(0, 0, 255, 0.100);
+    background-color: var(--info);
+    border-bottom:1px solid var(--primary)
 }
 
 .project-tab-list-item {
     display:inline-block;
-    width:fit-content;
-    border:1px solid lightgrey;
+    width:auto;
     padding:10px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
     margin:5px;
     font-size:13px;
+    border-bottom: 1px solid white;
+}
+
+.project-tab-list-item:hover {
+    font-weight:600;
 }
 
 .tab-item-container {
     display:flex;
+    flex-direction: column;
+    width:98%;
     justify-content: space-between;
     border-radius: 10px;
     position:absolute;
     left:10px;
     top:50px;
+    height:auto;
 
+}
+
+.issue-item-container {
+    display:flex;
+    height:520px;
+}
+
+.issue-item-list {
+    display:flex;
+    flex-direction: column;
+    width:45%;
+    height:80%;
+    background-color: var(--primary);
+    border-radius:10px;
+    border:1px solid white;
+}
+
+.closed {
+    background-color: var(--info);
+}
+
+.issue-item-view {
+    position:absolute;
+    border:1px solid var(--primary);
+    right:0px;
+    top:6%;
+    width:50%;
+    height:94%;
+    padding-left:20px;
+    font-size:90%;
+    border-radius:10px;
 }
 
 .issue-open {
-    background-color: red;
+    background-color: var(--danger);
     color:white;
-}
-
-.issue-open:hover {
-    background-color: rgba(255, 0, 0, 75%)
 }
 
 .issue-closed {
-    background-color: blue;
+    background-color: var(--info);
     color:white;
 }
 
-.issue-closed:hover {
-    background-color:rgba(0, 0, 255, 75%)
+.bugreport-active {
+    background-color: var(--purple);
 }
 
-.bugreport:hover {
-    background-color: rgba(211, 211, 211, 20%);
+.active-project-title {
+    width:100%;
+    font-weight:600;
+    margin-bottom:10px;
 }
+
+.bold {
+    font-weight:600
+}
+
+.comment {
+    margin:5px;
+}
+
+.submit-comment-container {
+    position:absolute;
+    bottom:-450px;
+    left:-430px;
+    display:flex;
+    border:1px solid white;
+    height:40px;
+    width:425px;
+    position:relative;
+    border-radius: 5px;
+}
+
+.submit-comment-text {
+    flex-grow: 1;
+    border:none;
+    outline:transparent;
+    width:100%;
+    box-sizing:border-box;
+    height:100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-right:130px;
+    
+}
+
+.submit-comment-button {
+    display:flex;
+    position:absolute;
+    right:0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width:120px;
+    justify-content: center;
+    align-items: center;
+    font-weight:600;
+    background-color: var(--primary);
+    height:100%;
+    cursor: pointer;
+}
+
+.comments-container {
+    border:1px solid var(--primary);
+    margin-right:15px;
+    border-radius: 5px;
+    overflow:scroll
+
+}
+
+
+@media screen and (max-width:700px) {
+    .active-project-container {
+        height:75.5%;
+    }
+    .tab {
+        height:20px;
+    }
+    .issue-item-list {
+        height:50%;
+    }
+    .issue-item-view {
+        height:83%;
+        width:195px;
+        margin-right:5px;
+    }
+
+    .submit-comment-container {
+        position:relative;
+    }
+}
+
+
 

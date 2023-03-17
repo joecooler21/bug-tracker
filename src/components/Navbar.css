@@ -2,9 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-bottom: 1px solid darkgrey;
+    border-bottom: 1px solid var(--primary);
     width: 100%;
-    background-color: white;
+    background-color: var(--foreground);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -15,14 +15,7 @@
 
 }
 
-@media(max-width:700px) {
-    .search-container {
-        width: 95%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
 
-}
 
 .search-text {
     width: 100%;
@@ -34,12 +27,7 @@
     caret-color: black;
 }
 
-@media screen and (max-width:700px) {
-    .search-text {
-        border:1px solid lightgrey;
-        border-radius: 10px;
-    }
-}
+
 
 .issue-buttons-container {
     display: flex;
@@ -50,36 +38,71 @@
     border: none;
     cursor: pointer;
     padding: 10px;
-    background-color: white;
+    color: white;
+    background: #e14eca;
+    background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+    background-size: 210% 210%;
+    background-position: 100% 0;
+    background-color: #e14eca;
+    font-weight: 600;
+    transition:all .5s;
+}
+
+.white-left-border {
+    border-left:1px solid white
+}
+
+.left-radius {
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+}
+
+.right-radius {
+    border-top-right-radius:10px;
 }
 
 .navbar-button:hover {
-    background-color: rgba(211, 211, 211, 20%);
+    cursor: pointer;
+
 }
 
 .badge {
-    position:relative;
+    position: relative;
     text-align: center;
-    display:inline-block;
-    top:-7px;
-    width:10px;
-    height:10px;
+    display: inline-block;
+    top: -12px;
+    width: 10px;
+    height: 10px;
     line-height: 10px;
     border-radius: 50%;
-    padding:5px;
-    color:white;
+    padding: 5px;
+    background-color: white;
+    font-weight:600;
 }
 
 .red {
-    background-color: red;
+    color: var(--danger);
 }
 
 .blue {
-    background-color: blue;
+    color: var(--info);
 }
 
 .navbar-icon {
     vertical-align: middle;
+}
+
+@media(max-width:700px) {
+    .search-container {
+        width: 97%;
+        margin-bottom: 10px;
+    }
+    .search-text {
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        margin-left:10px;
+        height:30px;
+        position:relative;
+        top:20%;
+    }
+
 }

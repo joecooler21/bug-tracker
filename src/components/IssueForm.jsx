@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import '../components/IssueForm.css'
 
 const IssueForm = () => {
 
   const options = ['Bug', 'Enhancement', 'Feature']
+  const titleRef = useRef('')
+  const descRef = useRef('')
+
+  const submit = () => {
+    console.log(titleRef.current.value, descRef.current.value)
+  }
 
   return (
     <div className='new-issue-container'>
-    <label>Title:</label>
-    <input className='new-issue-title' type='text' defaultValue={'write a fascinating title here'}></input>
-    <label>Description:</label>
-    <textarea className='new-issue-comment' defaultValue={'write a captivating description here'}></textarea>
+    <label className='form-label'>Title:</label>
+    <input placeholder='Write a captivating title here' ref={titleRef}  className='new-issue-title' type='text'></input>
+    <label  className='form-label'>Description:</label>
+    <textarea placeholder='Write a fascinating description here'  ref={descRef}  className='new-issue-comment'></textarea>
     <div className='submit-button-container'>
       <select className='select'>
 
@@ -19,8 +25,7 @@ const IssueForm = () => {
         })}
 
       </select>
-      <button className='navbar-button submit'>Submit</button>
-      <button className='navbar-button submit'>Cancel</button>
+      <button onClick={submit} className='navbar-button submit'>Submit</button>
     </div>
     </div>
   )
