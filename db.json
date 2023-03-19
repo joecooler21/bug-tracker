@@ -25,22 +25,21 @@
                             "body": "example comment",
                             "author": "joe"
                         }
-                    ],
-                    "author": "Joe"
+                    ]
                 }
             ],
             "closed": [
                 {
                     "id": 1,
                     "title": "Weather information doesn't match zip code",
-                    "comment/resolution": "issue fixed",
-                    "author": "Joe"
+                    "author": "Joe",
+                    "body":"See title"
                 },
                 {
                     "id": 2,
                     "title": "Slow performance after fetching weather data",
-                    "comment/resolution": "issue fixed",
-                    "author": "Joe"
+                    "author": "Joe",
+                    "body":"See title"
                 }
             ]
         },
@@ -69,8 +68,7 @@
                             "body": "example comment",
                             "author": "joe"
                         }
-                    ],
-                    "author": "Joe"
+                    ]
                 },
                 {
                     "id": 2,
@@ -100,8 +98,8 @@
                 {
                     "id": 1,
                     "title": "seeking sometimes reverts to starting playback position",
-                    "comment/resolution": "issue fixed",
-                    "author": "Joe"
+                    "author": "Joe",
+                    "body":"See title"
                 }
             ]
         },
@@ -138,8 +136,8 @@
                 {
                     "id": 1,
                     "title": "Refresh button alignment issue",
-                    "comment/resolution": "issue fixed",
-                    "author": "Joe"
+                    "author": "Joe",
+                    "body":"See title"
                 }
             ]
         }

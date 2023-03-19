@@ -1,13 +1,15 @@
 import React from 'react'
 import '../components/Navbar.css'
 
-import { Search, CreateNewFolder, FolderOpen, BugReport } from '@material-ui/icons'
+import { Search, CreateNewFolder, FolderOpen } from '@material-ui/icons'
 
 const Navbar = ({ setProjectData, setActiveProject }) => {
 
+    const URL = `https://delightful-neckerchief-foal.cyclic.app/`
+
     async function loadProjects() {
         try {
-          const response = await fetch('http://localhost:3000/projects');
+          const response = await fetch(URL + `projects`);
           const data = await response.json();
           setProjectData(data)
         } catch (error) {

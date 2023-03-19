@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import IssueForm from './IssueForm'
-import { BugReport } from '@material-ui/icons'
+import OpenIssue from './OpenIssue'
+import ClosedIssue from './ClosedIssue'
+import { BugReport, Close } from '@material-ui/icons'
 import '../components/ActiveProject.css'
 
 
@@ -9,16 +11,20 @@ const ActiveProject = ({ activeProject }) => {
 
   const [projectData, setProjectData] = useState(null)
   const [activeTab, setActiveTab] = useState('open')
-  const [activeIssue, setActiveIssue] = useState(null)
+  const [openIssue, setOpenIssue] = useState(null)
+  const [closedIssue, setClosedIssue] = useState(null)
+
+  const URL = `https://delightful-neckerchief-foal.cyclic.app/projects/`
 
 
   useEffect(() => {
 
     async function loadProject() {
       try {
-        const response = await fetch(`http://localhost:3000/projects/${activeProject}`);
+        const response = await fetch(URL + `${activeProject}`);
         const data = await response.json();
-        setProjectData(data)
+        console.log(data[0])
+        setProjectData({id:data[0].id, title:data[0].title, open:data[0].open, closed:data[0].closed})
       } catch (error) {
         console.error(error);
       }
@@ -26,17 +32,18 @@ const ActiveProject = ({ activeProject }) => {
     loadProject()
   }, [])
 
-  const openIssue = (id) => {
-    setActiveIssue(id)
-    //setActiveTab('open-issue')
-    let index = projectData.open.findIndex(e => e.id === id)
-    setActiveIssue(projectData.open[index])
+  const openIssueClick = (index) => {
+    setOpenIssue(projectData.open[index])
+  }
+
+  const closeIssueClick = (index) => {
+    setClosedIssue(projectData.closed[index])
+
   }
 
   useEffect(() => {
-    if (activeTab != 'open') {
-      setActiveIssue(null)
-    }
+    setOpenIssue(null)
+    setClosedIssue(null)
 
   }, [activeTab])
 
@@ -63,51 +70,30 @@ const ActiveProject = ({ activeProject }) => {
           <div className='active-project-title'>{projectData.title}</div>
           <div className='issue-item-container'>
 
-            {/* open issue tab list */}
-            {activeTab === 'open' ? <div className='issue-item-list'>{projectData.open.map((e) => {
-              return (<div onClick={() => openIssue(e.id)} className='project-tab-list-item' key={e.id}>Issue # {e.id} {e.title}</div>)
+            {/* open issue list */}
+            {activeTab === 'open' ? <div className='issue-item-list'>{projectData.open.map((e, index) => {
+              return (<div onClick={() => openIssueClick(index)}
+                className='project-tab-list-item'
+                key={index}>Issue # {e.id} {e.title}</div>)
             })}</div> : null}
-
-            {activeTab === 'open' && activeIssue != null ? <div className='submit-comment-container'>
-              <input className='submit-comment-text' type='text'></input>
-              <div className='submit-comment-button'>Submit</div>
-            </div>: null}
-
+            
             {/*open issue side panel */}
-            {activeIssue && <div className='issue-item-view'>
-              <div>
-                <h3>Title:</h3>
-                <label>{activeIssue.title}</label>
-                <h3>Submitted by</h3>
-                <label>{activeIssue.author}</label>
-                <h3>Description:</h3>
-                <label>{activeIssue.comment}</label>
-                <h3>Comments &#40;{activeIssue.comments.length}&#41;</h3>
-                <div className='comments-container'>
-                  {activeIssue.comments.map((e, index) => {
-                    return (<div className='comment' key={index}><span className='bold'>{e.author} </span>says {e.body}</div>)
-                  })}
-                </div>
+            {openIssue != null && <OpenIssue projectId={projectData.id} openIssue={openIssue} />} 
 
-
-
-
-              </div>
-            </div>}
-
-            {activeTab === 'closed' ? <div className='issue-item-list closed'>{projectData.closed.map((e) => {
-              return (<div className='project-tab-list-item issue-closed' key={e.id}>Issue # {e.id} {e.title}</div>)
+            {/* closed tab content */}
+            {activeTab === 'closed' ? <div className='issue-item-list closed'>{projectData.closed.map((e, index) => {
+              return (<div onClick={() => { closeIssueClick(index) }} className='project-tab-list-item issue-closed' key={index}>Issue # {e.id} {e.title}</div>)
             })}</div> : null}
+
+            {closedIssue != null && <ClosedIssue closedIssue={closedIssue} />}
 
             {activeTab === 'new-issue' ? <IssueForm /> : null}
-
-
-            {/* {activeTab === 'open-issue' ? <ActiveIssue activeIssue={activeIssue} /> : null} */}
           </div>
 
 
         </div>
       </div>}
+
 
 
     </div>

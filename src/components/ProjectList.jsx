@@ -20,4 +20,6 @@ const ProjectList = ({ projectData, setActiveProject }) => {
     )
 }
 
+// id, title, info
+
 export default ProjectList
