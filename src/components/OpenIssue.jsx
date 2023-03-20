@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import '../components/OpenIssue.css'
 
-const OpenIssue = ({ openIssue, projectId }) => {
+const OpenIssue = ({ openIssue, setOpenIssue, projectId }) => {
 
   const [comment, setComment] = useState('')
+  const URL = `https://delightful-neckerchief-foal.cyclic.app/comment/`
 
 
   const handleText = (e) => {
@@ -11,24 +12,22 @@ const OpenIssue = ({ openIssue, projectId }) => {
   }
 
   const submitComment = async () => {
-    let new_id = openIssue.comments.length + 1
-    const msg = { id: new_id, body: comment, author: 'Joe' }
 
     try {
-      const response = await
-        fetch(`http://localhost:3000/projects/${projectId}/open/${openIssue.id}/comments`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(msg)
-          })
-          const data = await response.json()
-          console.log(data)
+      const msg = { comment: comment }
+      const response = await fetch(URL + `${projectId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(msg)
+      })
+      const data = await response.json()
+      const newOpenIssue = {...OpenIssue, comments:data}
+      setOpenIssue(newOpenIssue)
 
+    } catch (error) { console.log(error) }
 
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   return (
@@ -47,7 +46,7 @@ const OpenIssue = ({ openIssue, projectId }) => {
 
         <div className='submit-comment-container'>
           <input onChange={handleText} className='submit-comment-text' type='text'></input>
-          <div onClick={submitComment} className='submit-comment-button'>Submit</div>
+          <button onClick={submitComment} className='submit-comment-button'>Submit</button>
         </div>
 
 

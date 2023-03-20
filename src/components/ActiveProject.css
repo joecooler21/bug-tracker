@@ -180,6 +180,7 @@
 }
 
 .submit-comment-button {
+    all:unset;
     display:flex;
     position:absolute;
     right:0px;
@@ -192,6 +193,7 @@
     background-color: var(--primary);
     height:100%;
     cursor: pointer;
+    color:white;
 }
 
 .comments-container {

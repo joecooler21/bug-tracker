@@ -23,7 +23,6 @@ const ActiveProject = ({ activeProject }) => {
       try {
         const response = await fetch(URL + `${activeProject}`);
         const data = await response.json();
-        console.log(data[0])
         setProjectData({id:data[0].id, title:data[0].title, open:data[0].open, closed:data[0].closed})
       } catch (error) {
         console.error(error);
@@ -78,7 +77,7 @@ const ActiveProject = ({ activeProject }) => {
             })}</div> : null}
             
             {/*open issue side panel */}
-            {openIssue != null && <OpenIssue projectId={projectData.id} openIssue={openIssue} />} 
+            {openIssue != null && <OpenIssue projectId={projectData.id} setOpenIssue={setOpenIssue} openIssue={openIssue} />} 
 
             {/* closed tab content */}
             {activeTab === 'closed' ? <div className='issue-item-list closed'>{projectData.closed.map((e, index) => {
